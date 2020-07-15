@@ -1,0 +1,26 @@
+{
+	"name": "Scripter",
+	"version": "1.0",
+	"description": "Scripter is a easy way to inject Javascript to a site, when you write a script is going to be defined just for that site",
+	"permissions": [
+		"storage",
+		"activeTab",
+		"tabs",
+		"downloads"
+	],
+	"background": {
+		"scripts": ["src/background.js"],
+		"persistent": false
+	},
+	"content_scripts": [ {
+		"matches": ["<all_urls>"],
+		"js": ["/src/content.js"]
+	} ],
+	"browser_action": {
+		"default_popup": "src/popup.html"
+	},
+	"icons": {
+		"16": "/src/icons/icon.png"
+	},
+	"manifest_version": 2
+}
